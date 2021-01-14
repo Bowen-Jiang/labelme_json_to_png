@@ -45,9 +45,14 @@ def Json2png(input_path,temp_path,mask_path):
             cv2.imwrite(img_raw_file,raw)
             cv2.imwrite(img_binary_file,img_binary)
 
-#路徑
+
 if __name__ == "__main__":
     input_path = "data/label" 
     temp_path = "data/temp"
     mask_path = "data/output"
+    
+    #create folder
+    os.makedirs(temp_path, exist_ok=True)
+    os.makedirs(mask_path, exist_ok=True)
+    
     Json2png(input_path,temp_path,mask_path)
